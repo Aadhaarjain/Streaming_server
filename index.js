@@ -13,7 +13,7 @@ app.get('/video', function(req, res){
     if(!range){
         res.status(400).send("Requires Range header");
     }
-    var videoPath = "./tom&jerry.mp4";
+    var videoPath = "./video/tom&jerry.mp4";
     var videoSize = fs.statSync(videoPath).size;
     //console.log("size of video is:", videoSize);
     var CHUNK_SIZE = 10**6; //1 MB
