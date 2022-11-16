@@ -16,7 +16,7 @@ app.get('/video', function(req, res){
     var videoPath = "./tom&jerry.mp4";
     var videoSize = fs.statSync(videoPath).size;
     //console.log("size of video is:", videoSize);
-    var CHUNK_SIZE = 10**6; //1 MB
+    var CHUNK_SIZE = 10**7; //1 MB
     var start = Number(range.replace(/\D/g, "")); 
     var end = Math.min(start + CHUNK_SIZE , videoSize-1);
     var contentLength = end-start+1;
