@@ -29,13 +29,6 @@ app.get('/video', function(req, res){
     res.writeHead(206,headers);
     var videoStream = fs.createReadStream(videoPath,{start, end});
     videoStream.pipe(res);
-    
-    app.UseStaticFiles(new StaticFileOptions
-    {
-        FileProvider = new PhysicalFileProvider
-        (Path.Combine(env.ContentRootPath, "video")),
-        RequestPath = "/video"
-    });
 
 })
 
